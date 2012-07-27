@@ -1,0 +1,9 @@
+.PHONY: clean
+.DEFAULT: %(filename)s.dvi %(filename)s.pdf
+
+DVIPDFM = dvipdfmx
+DVIPDFMFLAGS = -p a4
+
+LaTeXDocument(%(filename)s, %(filename)s)
+clean:
+	rm %(filename)s.dvi %(filename)s.pdf
